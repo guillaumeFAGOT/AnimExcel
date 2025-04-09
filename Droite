@@ -1,0 +1,33 @@
+REM  *****  BASIC  *****
+
+Sub ValeurAnimeeCalc()
+    Dim t As Double, c As Double, d As Double
+    Dim x As Double, y As Double
+    Dim entx As Integer, enty As Integer
+    Dim cellule As Object
+    Dim delta As Double
+    Dim tStep As Double
+    Dim tMax As Double
+    
+    c = 3 / 4
+    d = 5 / 6
+    delta = 0 ' Si tu veux l'animer, change cette valeur à chaque appel
+    tStep = 0.02
+    tMax = 120
+    
+    Dim feuille As Object
+    feuille = ThisComponent.Sheets(0) ' Première feuille
+    
+    For t = 0 To tMax Step 1
+        x =t
+        y = t
+        
+        entx = x
+        enty = y
+        
+      
+            cellule = feuille.getCellByPosition(entx, enty)
+            cellule.CellBackColor = RGB(100 + enty, 0, 0)
+        
+    Next t
+End Sub
